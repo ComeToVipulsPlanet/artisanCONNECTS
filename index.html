@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ArtisanConnect</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================================= -->
+    <!-- SPLASH SCREEN -->
+    <!-- ================================================= -->
+
+    <section id="splashScreen" class="screen splash-screen">
+
+        <div class="splash-content">
+
+            <div class="logo">🎨</div>
+
+            <h1>ArtisanConnect</h1>
+
+            <p>
+                Connecting Artisans
+                <br>
+                To New Markets
+            </p>
+
+            <div class="loader"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- LOGIN SCREEN -->
+    <!-- ================================================= -->
+
+    <section id="loginScreen" class="screen hidden login-screen">
+
+        <div class="login-card">
+
+            <div class="logo">🎨</div>
+
+            <h1>Welcome to ArtisanConnect</h1>
+
+            <p class="subtitle">
+                Empowering artisans with smarter markets
+            </p>
+
+
+            <label>
+                Mobile Number
+            </label>
+
+            <input type="tel" id="mobileNumber" placeholder="Enter mobile number">
+
+
+            <label>
+                Password
+            </label>
+
+            <input type="password" id="password" placeholder="Enter password">
+
+
+            <button class="primary-btn" onclick="login()">
+
+                Login
+
+            </button>
+
+
+            <p class="small-text">
+                Prototype Login
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- DASHBOARD -->
+    <!-- ================================================= -->
+
+    <section id="dashboardScreen" class="screen hidden">
+
+        <header class="app-header">
+
+            <div>
+
+                <h2>ArtisanConnect</h2>
+
+                <p>
+                    Welcome, Artisan 👋
+                </p>
+
+            </div>
+
+            <div class="header-icon">
+                👤
+            </div>
+
+        </header>
+
+
+        <main class="dashboard">
+
+
+            <!-- QUICK ACTIONS -->
+
+            <h2 class="section-title">
+                What would you like to do?
+            </h2>
+
+
+            <div class="dashboard-grid">
+
+
+                <div class="dashboard-card" onclick="openAddProduct()">
+
+                    <div class="dashboard-icon">
+                        📷
+                    </div>
+
+                    <h3>
+                        Add Product
+                    </h3>
+
+                    <p>
+                        Create smart catalog
+                    </p>
+
+                </div>
+
+
+
+                <div class="dashboard-card" onclick="openCatalog()">
+
+                    <div class="dashboard-icon">
+                        📦
+                    </div>
+
+                    <h3>
+                        My Catalog
+                    </h3>
+
+                    <p>
+                        View your products
+                    </p>
+
+                </div>
+
+
+
+                <div class="dashboard-card" onclick="openMarketLinkage()">
+
+                    <div class="dashboard-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Market Match
+                    </h3>
+
+                    <p>
+                        Find suitable markets
+                    </p>
+
+                </div>
+
+
+
+                <div class="dashboard-card" onclick="openBuyers()">
+
+                    <div class="dashboard-icon">
+                        👥
+                    </div>
+
+                    <h3>
+                        Find Buyers
+                    </h3>
+
+                    <p>
+                        Connect with buyers
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- DASHBOARD INFO -->
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h3>
+                        AI-Powered Assistance
+                    </h3>
+
+                    <p>
+                        Upload your product photo and
+                        get smart catalog information,
+                        suggested pricing and market
+                        recommendations.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FEATURES -->
+
+            <h2 class="section-title">
+                Platform Features
+            </h2>
+
+
+            <div class="feature-list">
+
+                <div class="feature-item">
+
+                    <span>📸</span>
+
+                    <div>
+
+                        <strong>
+                            Smart Cataloging
+                        </strong>
+
+                        <p>
+                            Convert product photos into
+                            digital product listings.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="feature-item">
+
+                    <span>🎯</span>
+
+                    <div>
+
+                        <strong>
+                            Market Linkage
+                        </strong>
+
+                        <p>
+                            Identify suitable markets for
+                            artisan products.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="feature-item">
+
+                    <span>👥</span>
+
+                    <div>
+
+                        <strong>
+                            Buyer Matching
+                        </strong>
+
+                        <p>
+                            Discover potential buyers and
+                            retailers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ADD PRODUCT SCREEN -->
+    <!-- ================================================= -->
+
+    <section id="addProductScreen" class="screen hidden">
+
+
+        <header class="page-header">
+
+            <button onclick="goToDashboard()">
+                ←
+            </button>
+
+            <h2>
+                Add Product
+            </h2>
+
+            <span></span>
+
+        </header>
+
+
+        <main class="page-content">
+
+
+            <!-- IMAGE UPLOAD -->
+
+            <div class="upload-card">
+
+                <label for="productImage" class="upload-area">
+
+                    <div id="imagePreview">
+
+                        <div class="camera-icon">
+                            📷
+                        </div>
+
+                        <h3>
+                            Add Product Photo
+                        </h3>
+
+                        <p>
+                            Click here to choose a photo
+                        </p>
+
+                    </div>
+
+                </label>
+
+
+                <input type="file" id="productImage" accept="image/*" onchange="previewImage(event)" hidden>
+
+            </div>
+
+
+
+            <!-- PRODUCT DETAILS -->
+
+            <div class="form-card">
+
+                <h3>
+                    Product Details
+                </h3>
+
+
+                <label>
+                    Product Category
+                </label>
+
+                <select id="productCategory">
+
+                    <option value="">
+                        Select category
+                    </option>
+
+                    <option value="metal">
+                        Metal / Steel Craft
+                    </option>
+
+                    <option value="bamboo">
+                        Bamboo Craft
+                    </option>
+
+                    <option value="jute">
+                        Jute Craft
+                    </option>
+
+                    <option value="wood">
+                        Wood Craft
+                    </option>
+
+                    <option value="pottery">
+                        Pottery
+                    </option>
+
+                    <option value="textile">
+                        Textile / Handwoven
+                    </option>
+
+                    <option value="jewellery">
+                        Jewellery
+                    </option>
+
+                    <option value="handicraft">
+                        Other Handicraft
+                    </option>
+
+                </select>
+
+
+
+                <label>
+                    Material
+                </label>
+
+                <select id="productMaterial">
+
+                    <option value="">
+                        Select material
+                    </option>
+
+                    <option value="steel">
+                        Steel
+                    </option>
+
+                    <option value="metal">
+                        Metal
+                    </option>
+
+                    <option value="bamboo">
+                        Bamboo
+                    </option>
+
+                    <option value="jute">
+                        Jute
+                    </option>
+
+                    <option value="wood">
+                        Wood
+                    </option>
+
+                    <option value="clay">
+                        Clay
+                    </option>
+
+                    <option value="cotton">
+                        Cotton
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+
+
+                <label>
+                    Expected Price
+                </label>
+
+                <input type="number" id="productPrice" placeholder="Example: 500">
+
+
+
+                <label>
+                    Quantity Available
+                </label>
+
+                <input type="number" id="productQuantity" placeholder="Example: 10">
+
+
+
+                <label>
+                    Location
+                </label>
+
+                <input type="text" id="productLocation" value="Maharashtra" placeholder="Your location">
+
+
+            </div>
+
+
+
+            <button class="primary-btn analyze-btn" onclick="analyzeProduct()">
+
+                🤖 Generate Smart Catalog
+
+            </button>
+
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- AI LOADING SCREEN -->
+    <!-- ================================================= -->
+
+    <section id="aiLoadingScreen" class="screen hidden loading-screen">
+
+        <div class="loading-content">
+
+            <div class="ai-icon">
+                🤖
+            </div>
+
+            <h2>
+                AI is analyzing...
+            </h2>
+
+            <p>
+                Analyzing your product image...
+            </p>
+
+            <div class="big-loader"></div>
+
+            <div class="loading-steps">
+
+                <p>✓ Identifying product</p>
+
+                <p>✓ Creating catalog information</p>
+
+                <p>✓ Finding suitable markets</p>
+
+                <p>✓ Matching potential buyers</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- SMART CATALOG RESULT -->
+    <!-- ================================================= -->
+
+    <section id="aiResultScreen" class="screen hidden">
+
+
+        <header class="page-header">
+
+            <button onclick="openAddProduct()">
+                ←
+            </button>
+
+            <h2>
+                Smart Catalog
+            </h2>
+
+            <span></span>
+
+        </header>
+
+
+        <main class="page-content">
+
+
+            <!-- PRODUCT IMAGE -->
+
+            <div class="result-image-card">
+
+                <img id="resultProductImage" src="" alt="Product">
+
+            </div>
+
+
+
+            <!-- PRODUCT NAME -->
+
+            <div class="result-card">
+
+                <p class="label">
+                    Product Name
+                </p>
+
+                <h2 id="resultProductName">
+                    Handcrafted Artisan Product
+                </h2>
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="result-card">
+
+                <p class="label">
+                    Category
+                </p>
+
+                <h3 id="resultCategory">
+                    Handicraft
+                </h3>
+
+            </div>
+
+
+
+            <!-- MATERIAL -->
+
+            <div class="result-card">
+
+                <p class="label">
+                    Material
+                </p>
+
+                <h3 id="resultMaterial">
+                    Artisan Material
+                </h3>
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="result-card">
+
+                <p class="label">
+                    Product Description
+                </p>
+
+                <p id="resultDescription">
+                    A handcrafted product created by
+                    a local artisan.
+                </p>
+
+            </div>
+
+
+
+            <!-- TAGS -->
+
+            <div class="result-card">
+
+                <p class="label">
+                    Smart Tags
+                </p>
+
+                <div id="resultTags" class="tags">
+                </div>
+
+            </div>
+
+
+
+            <!-- PRICE -->
+
+            <div class="price-card">
+
+                <p>
+                    Suggested Market Price
+                </p>
+
+                <h2 id="resultPrice">
+                    ₹500 – ₹1000
+                </h2>
+
+            </div>
+
+
+
+            <!-- MARKET -->
+
+            <div class="market-recommendation">
+
+                <div>
+
+                    <p>
+                        🎯 Recommended Market
+                    </p>
+
+                    <h2 id="recommendedMarket">
+                        Mumbai
+                    </h2>
+
+                </div>
+
+
+                <div class="match-score">
+
+                    <strong id="marketScore">
+                        90%
+                    </strong>
+
+                    <span>
+                        Match
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BUTTONS -->
+
+            <button class="primary-btn" onclick="addToCatalog()">
+
+                ✓ Add to My Catalog
+
+            </button>
+
+
+            <button class="secondary-btn" onclick="goToDashboard()">
+
+                ← Back to Dashboard
+
+            </button>
+
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- MARKET LINKAGE SCREEN -->
+    <!-- ================================================= -->
+
+    <section id="marketScreen" class="screen hidden">
+
+
+        <header class="page-header">
+
+            <button onclick="goToDashboard()">
+                ←
+            </button>
+
+            <h2>
+                Market Linkage
+            </h2>
+
+            <span></span>
+
+        </header>
+
+
+        <main class="page-content market-content">
+
+
+            <!-- PRODUCT -->
+
+            <div class="market-product-card">
+
+                <h2 id="marketProductName">
+                    Handcrafted Product
+                </h2>
+
+                <p id="marketProductCategory">
+                    Artisan Craft
+                </p>
+
+            </div>
+
+
+
+            <!-- MARKET TITLE -->
+
+            <h2 class="market-section-title">
+                🎯 Recommended Markets
+            </h2>
+
+
+
+            <!-- MUMBAI -->
+
+            <div class="market-card">
+
+                <div class="market-top">
+
+                    <div>
+
+                        <h3>
+                            📍 Mumbai
+                        </h3>
+
+                        <span class="ai-match-label">
+                            AI RECOMMENDED
+                        </span>
+
+                    </div>
+
+
+                    <div class="market-score-box">
+
+                        <strong>
+                            90%
+                        </strong>
+
+                        <span>
+                            MATCH
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Strong market for handmade,
+                    household and artisan products.
+                </p>
+
+
+                <button class="view-buyers-btn" onclick="openBuyers()">
+
+                    👥 View Potential Buyers
+
+                </button>
+
+            </div>
+
+
+
+            <!-- PUNE -->
+
+            <div class="market-card">
+
+                <div class="market-top">
+
+                    <div>
+
+                        <h3>
+                            📍 Pune
+                        </h3>
+
+                    </div>
+
+
+                    <div class="market-score-box">
+
+                        <strong>
+                            86%
+                        </strong>
+
+                        <span>
+                            MATCH
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Growing demand for sustainable
+                    and handmade products.
+                </p>
+
+            </div>
+
+
+
+            <!-- DELHI -->
+
+            <div class="market-card">
+
+                <div class="market-top">
+
+                    <div>
+
+                        <h3>
+                            📍 Delhi
+                        </h3>
+
+                    </div>
+
+
+                    <div class="market-score-box">
+
+                        <strong>
+                            81%
+                        </strong>
+
+                        <span>
+                            MATCH
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Large market for traditional
+                    handicrafts and home décor.
+                </p>
+
+            </div>
+
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- BUYERS SCREEN -->
+    <!-- ================================================= -->
+
+    <section id="buyersScreen" class="screen hidden">
+
+
+        <header class="page-header">
+
+            <button onclick="goToDashboard()">
+                ←
+            </button>
+
+            <h2>
+                Potential Buyers
+            </h2>
+
+            <span></span>
+
+        </header>
+
+
+        <main class="page-content">
+
+
+            <!-- PRODUCT -->
+
+            <div class="buyer-product">
+
+                <img id="buyerProductImage" src="" alt="Product">
+
+                <div>
+
+                    <h3 id="buyerProductName">
+                        Handcrafted Product
+                    </h3>
+
+                    <p id="buyerProductCategory">
+                        Artisan Craft
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BUYER 1 -->
+
+            <div class="buyer-card">
+
+                <div class="buyer-top">
+
+                    <div>
+
+                        <h3>
+                            🏪 Urban Home Store
+                        </h3>
+
+                        <p>
+                            📍 Mumbai
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        94% Match
+                    </strong>
+
+                </div>
+
+
+                <p>
+                    Interested in handmade steel
+                    and utility products.
+                </p>
+
+
+                <p>
+                    📦 Potential Order:
+                    <b>50–100 units</b>
+                </p>
+
+
+                <button onclick="contactBuyer('Urban Home Store')">
+
+                    Contact Buyer
+
+                </button>
+
+            </div>
+
+
+
+            <!-- BUYER 2 -->
+
+            <div class="buyer-card">
+
+                <div class="buyer-top">
+
+                    <div>
+
+                        <h3>
+                            🏪 Craft & Living
+                        </h3>
+
+                        <p>
+                            📍 Pune
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        88% Match
+                    </strong>
+
+                </div>
+
+
+                <p>
+                    Interested in traditional
+                    handmade products.
+                </p>
+
+
+                <p>
+                    📦 Potential Order:
+                    <b>30–60 units</b>
+                </p>
+
+
+                <button onclick="contactBuyer('Craft & Living')">
+
+                    Contact Buyer
+
+                </button>
+
+            </div>
+
+
+
+            <!-- BUYER 3 -->
+
+            <div class="buyer-card">
+
+                <div class="buyer-top">
+
+                    <div>
+
+                        <h3>
+                            🏪 Artisan Bazaar
+                        </h3>
+
+                        <p>
+                            📍 Delhi
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        81% Match
+                    </strong>
+
+                </div>
+
+
+                <p>
+                    Looking for unique artisan
+                    and handicraft products.
+                </p>
+
+
+                <p>
+                    📦 Potential Order:
+                    <b>20–50 units</b>
+                </p>
+
+
+                <button onclick="contactBuyer('Artisan Bazaar')">
+
+                    Contact Buyer
+
+                </button>
+
+            </div>
+
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- MY CATALOG SCREEN -->
+    <!-- ================================================= -->
+
+    <section id="catalogScreen" class="screen hidden">
+
+
+        <header class="page-header">
+
+            <button onclick="goToDashboard()">
+                ←
+            </button>
+
+            <h2>
+                My Catalog
+            </h2>
+
+            <span></span>
+
+        </header>
+
+
+        <main class="page-content">
+
+            <div id="catalogProducts">
+
+                <p class="empty-message">
+                    No products added yet.
+                </p>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ENQUIRIES SCREEN -->
+    <!-- ================================================= -->
+
+    <section id="enquiriesScreen" class="screen hidden">
+
+
+        <header class="page-header">
+
+            <button onclick="goToDashboard()">
+                ←
+            </button>
+
+            <h2>
+                Enquiries
+            </h2>
+
+            <span></span>
+
+        </header>
+
+
+        <main class="page-content">
+
+            <div class="empty-message">
+
+                <div class="empty-icon">
+                    📩
+                </div>
+
+                <h3>
+                    No enquiries yet
+                </h3>
+
+                <p>
+                    Your buyer enquiries will appear here.
+                </p>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================================= -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

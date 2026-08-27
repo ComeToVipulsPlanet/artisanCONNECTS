@@ -1,0 +1,976 @@
+/* =================================================
+   ARTISANCONNECT - COMPLETE STYLESHEET
+   ================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f4f8;
+    color: #333;
+    min-height: 100vh;
+}
+
+
+/* =================================================
+   COMMON
+   ================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =================================================
+   SPLASH SCREEN
+   ================================================= */
+
+.splash-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,
+            #7b2cbf,
+            #9d4edd);
+    color: white;
+}
+
+.splash-content {
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.logo {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+}
+
+.splash-content h1 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.splash-content p {
+    font-size: 17px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.loader,
+.big-loader {
+    width: 34px;
+    height: 34px;
+    margin: 28px auto 0;
+    border: 4px solid rgba(255, 255, 255, 0.35);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+
+/* =================================================
+   LOGIN
+   ================================================= */
+
+.login-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #f7f4f8;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    background: white;
+    padding: 35px 28px;
+    border-radius: 24px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.login-card .logo {
+    background: #eee4f5;
+}
+
+.login-card h1 {
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin: 10px 0 30px;
+}
+
+.login-card label,
+.form-card label {
+    display: block;
+    margin: 15px 0 7px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+}
+
+.login-card input,
+.form-card input,
+.form-card select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    background: white;
+}
+
+.login-card input:focus,
+.form-card input:focus,
+.form-card select:focus {
+    border-color: #7b2cbf;
+}
+
+.small-text {
+    text-align: center;
+    color: #999;
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+
+/* =================================================
+   BUTTONS
+   ================================================= */
+
+.primary-btn {
+    width: 100%;
+    border: none;
+    background: #7b2cbf;
+    color: white;
+    padding: 14px;
+    border-radius: 11px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.2s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.93;
+}
+
+.secondary-btn {
+    width: 100%;
+    border: 1px solid #7b2cbf;
+    background: white;
+    color: #7b2cbf;
+    padding: 13px;
+    border-radius: 11px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* =================================================
+   HEADER
+   ================================================= */
+
+.app-header {
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.app-header h2 {
+    color: #7b2cbf;
+}
+
+.app-header p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.header-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #eee4f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =================================================
+   DASHBOARD
+   ================================================= */
+
+.dashboard {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 25px 18px 50px;
+}
+
+.section-title {
+    font-size: 20px;
+    margin: 20px 0 15px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 22px 16px;
+    border-radius: 17px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+}
+
+.dashboard-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.dashboard-card h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.dashboard-card p {
+    color: #777;
+    font-size: 11px;
+}
+
+.info-card {
+    display: flex;
+    gap: 14px;
+    background: #eee4f5;
+    padding: 18px;
+    border-radius: 16px;
+    margin-top: 25px;
+}
+
+.info-icon {
+    font-size: 28px;
+}
+
+.info-card h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.info-card p {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.feature-list {
+    background: white;
+    border-radius: 17px;
+    padding: 5px 18px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 15px;
+    padding: 17px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.feature-item>span {
+    font-size: 25px;
+}
+
+.feature-item strong {
+    font-size: 14px;
+}
+
+.feature-item p {
+    color: #777;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 4px;
+}
+
+
+/* =================================================
+   PAGE HEADER
+   ================================================= */
+
+.page-header {
+    height: 65px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.page-header h2 {
+    font-size: 19px;
+}
+
+.page-header button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #eee4f5;
+    color: #7b2cbf;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+
+/* =================================================
+   PAGE CONTENT
+   ================================================= */
+
+.page-content {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    padding: 20px 17px 50px;
+}
+
+
+/* =================================================
+   ADD PRODUCT
+   ================================================= */
+
+.upload-card {
+    background: white;
+    border-radius: 18px;
+    padding: 12px;
+    margin-bottom: 18px;
+}
+
+.upload-area {
+    display: block;
+    border: 2px dashed #d5c2e0;
+    border-radius: 14px;
+    padding: 35px 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.camera-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.upload-area h3 {
+    font-size: 16px;
+}
+
+.upload-area p {
+    color: #888;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.form-card {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.form-card h3 {
+    margin-bottom: 10px;
+}
+
+.analyze-btn {
+    margin-top: 18px;
+}
+
+
+/* =================================================
+   AI LOADING
+   ================================================= */
+
+.loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f4f8;
+}
+
+.loading-content {
+    text-align: center;
+    padding: 30px;
+}
+
+.ai-icon {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    border-radius: 50%;
+    background: #eee4f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.loading-content h2 {
+    margin-top: 25px;
+}
+
+.loading-content>p {
+    color: #777;
+    margin-top: 8px;
+}
+
+.loading-content .big-loader {
+    border-color: #ddd;
+    border-top-color: #7b2cbf;
+}
+
+.loading-steps {
+    margin-top: 25px;
+    text-align: left;
+    color: #666;
+    font-size: 12px;
+    line-height: 2;
+}
+
+
+/* =================================================
+   RESULT
+   ================================================= */
+
+.result-image-card {
+    background: white;
+    border-radius: 18px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.result-image-card img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+.result-card {
+    background: white;
+    padding: 18px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.result-card .label {
+    color: #999;
+    font-size: 11px;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+}
+
+.result-card h2 {
+    font-size: 20px;
+}
+
+.result-card h3 {
+    font-size: 16px;
+}
+
+.result-card>p:not(.label) {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =================================================
+   TAGS
+   ================================================= */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tags span {
+    background: #eee4f5;
+    color: #7b2cbf;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* =================================================
+   PRICE
+   ================================================= */
+
+.price-card {
+    background: #eee4f5;
+    padding: 20px;
+    border-radius: 17px;
+    margin-bottom: 15px;
+}
+
+.price-card p {
+    font-size: 11px;
+    color: #777;
+}
+
+.price-card h2 {
+    color: #7b2cbf;
+    margin-top: 7px;
+}
+
+
+/* =================================================
+   MARKET RECOMMENDATION
+   ================================================= */
+
+.market-recommendation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 18px;
+    border-radius: 17px;
+    margin-bottom: 15px;
+}
+
+.market-recommendation p {
+    color: #888;
+    font-size: 11px;
+}
+
+.market-recommendation h2 {
+    margin-top: 5px;
+}
+
+.match-score {
+    text-align: center;
+    background: #eee4f5;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.match-score strong {
+    display: block;
+    color: #7b2cbf;
+    font-size: 20px;
+}
+
+.match-score span {
+    font-size: 9px;
+    color: #777;
+}
+
+
+/* =================================================
+   MARKET LINKAGE
+   ================================================= */
+
+.market-product-card {
+    background: #eee4f5;
+    padding: 20px;
+    border-radius: 17px;
+    margin-bottom: 20px;
+}
+
+.market-product-card h2 {
+    color: #7b2cbf;
+    font-size: 19px;
+}
+
+.market-product-card p {
+    color: #777;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.market-section-title {
+    font-size: 18px;
+    margin: 18px 0 12px;
+}
+
+.market-card {
+    background: white;
+    padding: 18px;
+    border-radius: 17px;
+    margin-bottom: 14px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.market-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.market-top h3 {
+    font-size: 16px;
+}
+
+.market-card>p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+.market-score-box {
+    background: #eee4f5;
+    padding: 8px 10px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 60px;
+}
+
+.market-score-box strong {
+    display: block;
+    color: #7b2cbf;
+    font-size: 17px;
+}
+
+.market-score-box span {
+    color: #888;
+    font-size: 8px;
+}
+
+.ai-match-label {
+    display: inline-block;
+    background: #eee4f5;
+    color: #7b2cbf;
+    padding: 4px 7px;
+    border-radius: 12px;
+    font-size: 8px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+
+/* =================================================
+   ADVANCED MARKET ANALYSIS
+   ================================================= */
+
+.market-insights {
+    background: white;
+    padding: 18px;
+    border-radius: 17px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.market-insights h3 {
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+.insight-row {
+    margin-bottom: 15px;
+}
+
+.insight-row:last-child {
+    margin-bottom: 0;
+}
+
+.insight-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.insight-header span {
+    color: #666;
+    font-size: 11px;
+}
+
+.insight-header strong {
+    color: #7b2cbf;
+    font-size: 11px;
+}
+
+.insight-bar {
+    width: 100%;
+    height: 7px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.insight-fill {
+    height: 100%;
+    background: #7b2cbf;
+    border-radius: 10px;
+}
+
+.market-reason {
+    background: #eee4f5;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.market-reason p {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.market-reason strong {
+    color: #7b2cbf;
+}
+
+.view-buyers-btn {
+    width: 100%;
+    border: none;
+    background: #7b2cbf;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* =================================================
+   BUYERS
+   ================================================= */
+
+.buyer-product {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 17px;
+    margin-bottom: 15px;
+}
+
+.buyer-product img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.buyer-product h3 {
+    font-size: 15px;
+}
+
+.buyer-product p {
+    color: #777;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.buyer-card {
+    background: white;
+    padding: 18px;
+    border-radius: 17px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.buyer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.buyer-top h3 {
+    font-size: 15px;
+}
+
+.buyer-top p {
+    color: #777;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.buyer-top strong {
+    color: #7b2cbf;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.buyer-card>p {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+.buyer-card button {
+    width: 100%;
+    border: none;
+    background: #7b2cbf;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* =================================================
+   CATALOG
+   ================================================= */
+
+.catalog-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: white;
+    padding: 14px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.catalog-item img {
+    flex-shrink: 0;
+}
+
+.catalog-info h3 {
+    font-size: 14px;
+}
+
+.catalog-info p {
+    color: #777;
+    font-size: 11px;
+    margin: 4px 0;
+}
+
+.catalog-info strong {
+    color: #7b2cbf;
+    font-size: 12px;
+}
+
+.empty-message {
+    background: white;
+    border-radius: 17px;
+    padding: 45px 20px;
+    text-align: center;
+    color: #777;
+}
+
+.empty-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+
+/* =================================================
+   ANIMATIONS
+   ================================================= */
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =================================================
+   RESPONSIVE
+   ================================================= */
+
+@media (max-width: 500px) {
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-card {
+        padding: 18px 12px;
+    }
+
+    .splash-content h1 {
+        font-size: 28px;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .page-content {
+        padding-top: 30px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
